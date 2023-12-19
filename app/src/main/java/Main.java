@@ -1,5 +1,6 @@
 import ex4.Animal;
 import ex4.Cat;
+import ex4.Dog;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,5 +9,9 @@ public class Main {
 
         Cat cat = new Cat("たま");
         cat.makeSounds();
+
+        Dog dog = new Dog("ポチ");
+        dog.makeSounds();
+        dog.swim();
     }
 }
