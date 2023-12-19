@@ -10,6 +10,10 @@ plugins {
     application
 }
 
+java {                                      
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -34,10 +38,16 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass.set("ex4.App")
+    mainClass.set("Main")
 }
 
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "Main"
+    }
 }
